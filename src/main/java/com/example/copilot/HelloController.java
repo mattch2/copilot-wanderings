@@ -17,7 +17,7 @@ public class HelloController {
 
     @PostMapping("/question")
     public String question(@RequestBody QuestionRequest request) {
-        if ("foo".equals(request.getQuestion())) {
+        if (request != null && "foo".equals(request.getQuestion())) {
             return "bar";
         }
         return "Unknown question";
